@@ -1,0 +1,17 @@
+#! /bin/sh
+
+case "$1" in
+start)
+echo "Starting scull"
+scull_load
+;;
+stop)
+echo "Stopping scull"
+scull_unload
+;;
+*)
+echo "usage: $0 {start|stop}"
+exit 1
+esac
+
+exit 0

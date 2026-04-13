@@ -1,0 +1,19 @@
+#! /bin/sh
+
+case "$1" in
+start)
+echo "Starting faulty"
+module_load faulty
+modprobe hello
+;;
+stop)
+echo "Stopping faulty"
+module_unload faulty
+rmmod hello
+;;
+*)
+echo "usage: $0 {start|stop}"
+exit 1
+esac
+
+exit 0
